@@ -1,4 +1,12 @@
-/* Reset & General Styles */
+/* Warna Utama: Pink Cerah & Soft Pink */
+:root {
+    --bright-pink: #FF69B4;
+    --soft-pink: #FFC0CB;
+    --white: #FFFFFF;
+    --dark-text: #5D4037;
+    --accent: #FF1493;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,209 +14,144 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif; /* Font lembut dan ceria */
-    background-color: #ffebee; /* Pink sangat muda */
-    color: #4a4a4a;
-    line-height: 1.6;
-    padding: 30px 15px;
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
+    background-color: #FFF0F5; /* Lavender Blush */
+    font-family: 'Quicksand', sans-serif;
+    color: var(--dark-text);
     display: flex;
-    background: #fff;
-    border-radius: 15px; /* Sudut lebih membulat */
-    box-shadow: 0 10px 40px rgba(255, 105, 180, 0.2); /* Bayangan pink */
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* Container Utama */
+.cv-card {
+    background: var(--white);
+    max-width: 900px;
+    width: 100%;
+    border-radius: 40px;
+    border: 8px solid var(--soft-pink);
     overflow: hidden;
-    border: 2px solid #ffccd5; /* Border pink lembut */
+    box-shadow: 0 15px 0px var(--soft-pink);
 }
 
-/* Sidebar Styling */
-.sidebar {
-    width: 35%;
-    background-color: #ffb6c1; /* Pink muda */
-    color: #fff;
-    padding: 30px 25px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Sedikit bayangan teks */
-}
-
-.profile-section {
+/* Header */
+.header {
+    background-color: var(--soft-pink);
+    padding: 40px;
     text-align: center;
-    margin-bottom: 25px;
+    border-bottom: 5px dashed var(--white);
 }
 
-.photo-container {
-    margin-bottom: 15px;
-    position: relative;
-    display: inline-block; /* Agar efek bisa diterapkan */
-}
-
-.profile-photo {
-    width: 130px;
-    height: 130px;
+.photo-frame {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
     border-radius: 50%;
-    border: 5px solid #ff69b4; /* Pink cerah */
-    object-fit: cover;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Animasi bouncy */
+    border: 6px solid var(--white);
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
 
-.profile-photo:hover {
-    transform: scale(1.15) rotate(-8deg); /* Membesar dan sedikit miring */
-    border-color: #8a2be2; /* Ungu saat hover */
-    box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+/* Efek Hover Foto: Berputar dan Membesar */
+.photo-frame:hover {
+    transform: scale(1.2) rotate(10deg);
+    border-color: var(--bright-pink);
 }
 
 .name {
-    font-family: 'Pacifico', cursive; /* Font tulisan tangan */
-    font-size: 2.2rem;
-    color: #fff;
-    margin-bottom: 5px;
-    transition: color 0.3s ease-in-out;
+    font-family: 'Fredoka', sans-serif;
+    color: var(--accent);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: letter-spacing 0.3s ease;
 }
 
+/* Efek Hover Nama: Renggang */
 .name:hover {
-    color: #ffee58; /* Kuning cerah saat hover */
-    cursor: default;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px var(--soft-pink);
 }
 
-.tagline {
-    font-size: 0.9rem;
-    color: #f8f8f8;
+/* Layout Content */
+.main-content {
+    display: flex;
+    padding: 30px;
+}
+
+.sidebar {
+    flex: 1;
+    border-right: 3px dashed var(--soft-pink);
+    padding-right: 20px;
+}
+
+.content {
+    flex: 2;
+    padding-left: 30px;
+}
+
+.section {
     margin-bottom: 25px;
 }
 
-.contact-info h3, .skills-section h3, .hobby-section h3 {
-    border-bottom: 2px dashed #ff99cc; /* Garis putus-putus */
+.title-section {
+    font-family: 'Fredoka', sans-serif;
+    background: var(--bright-pink);
+    color: white;
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 20px;
     margin-bottom: 15px;
-    padding-bottom: 8px;
-    font-size: 1.2rem;
-    color: #fefefe;
 }
 
-.contact-info h3 i, .skills-section h3 i, .hobby-section h3 i {
-    margin-right: 8px;
-    color: #fff;
-}
-
-.info-item, .skills-section li, .hobby-section p {
-    font-size: 0.9rem;
+/* EFEK ATRAKTIF UNTUK SEMUA ITEM BERLABEL 'hover-item' */
+.hover-item {
+    background: #FFF9FA;
+    padding: 10px;
     margin-bottom: 8px;
-    padding: 8px;
-    border-radius: 8px;
+    border-radius: 15px;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1); /* Latar belakang transparan */
+    cursor: pointer;
+    border-left: 5px solid transparent;
 }
 
-.info-item a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
+/* Hover: Latar belakang jadi pink, teks putih, dan bergeser */
+.hover-item:hover {
+    background-color: var(--soft-pink);
+    color: white;
+    transform: translateX(10px);
+    border-left: 5px solid var(--accent);
+    box-shadow: 5px 5px 0px var(--bright-pink);
 }
 
-.info-item a:hover {
-    color: #ffee58; /* Kuning cerah */
-    text-decoration: underline;
+.hobby-tag {
+    display: inline-block;
+    margin-right: 5px;
 }
 
-/* Hover Effect for Sidebar Items */
-.info-item:hover, .skills-section li:hover, .hobby-section p:hover {
-    background: rgba(255, 255, 255, 0.3);
-    padding-left: 15px;
-    transform: translateX(5px);
-    box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+.about-text {
+    line-height: 1.6;
 }
 
-.skills-section ul, .cert-section ul {
-    list-style: none; /* Hilangkan bullet default */
+.list-edu {
+    list-style: none;
 }
 
-.skills-section li::before, .cert-section li::before {
-    content: '💖'; /* Bullet custom */
-    margin-right: 8px;
+.card-sub {
+    border: 2px solid var(--soft-pink);
 }
 
-/* Main Content Styling */
-.main-content {
-    width: 65%;
-    padding: 30px;
-    background-color: #fff;
-}
-
-section {
-    margin-bottom: 35px;
-    border-left: 4px solid #ffccd5; /* Garis pink di kiri */
-    padding-left: 20px;
-}
-
-h2 {
-    font-family: 'Pacifico', cursive;
-    color: #ff69b4; /* Pink cerah */
-    margin-bottom: 18px;
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-}
-
-h2 i {
-    margin-right: 10px;
-    color: #ff99cc;
-}
-
-/* Hover Effects Main Content */
-.about-section p, .edu-item, .item, .cert-section li {
-    padding: 12px;
-    transition: all 0.3s ease;
-    border-radius: 10px; /* Sudut lebih membulat */
-    border: 1px solid transparent; /* Border transparan untuk efek */
-}
-
-.about-section p:hover, .edu-item:hover, .item:hover, .cert-section li:hover {
-    background-color: #fff0f5; /* Pink sangat muda saat hover */
-    border-color: #ffccd5;
-    box-shadow: 0 5px 20px rgba(255, 105, 180, 0.1);
-    transform: translateY(-3px) scale(1.01); /* Sedikit naik dan membesar */
-}
-
-.edu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.year {
-    font-weight: 700;
-    color: #ff69b4; /* Pink cerah */
-    min-width: 120px;
-    text-align: right;
-    padding-right: 10px;
-}
-
-.item h4 {
-    color: #ff69b4;
-    margin-bottom: 5px;
-    font-size: 1.1rem;
-}
-
-/* Responsive */
+/* Responsif Mobile */
 @media (max-width: 768px) {
-    .container {
+    .main-content {
         flex-direction: column;
     }
-    .sidebar, .main-content {
-        width: 100%;
-        padding: 25px;
+    .sidebar {
+        border-right: none;
+        border-bottom: 3px dashed var(--soft-pink);
+        padding-right: 0;
+        margin-bottom: 20px;
     }
-    .year {
-        text-align: left;
-        min-width: unset;
-        width: 100%;
-        margin-bottom: 5px;
-    }
-    .edu-item {
-        flex-direction: column;
-        align-items: flex-start;
+    .content {
+        padding-left: 0;
     }
 }
